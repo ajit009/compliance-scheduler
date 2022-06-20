@@ -1,0 +1,10 @@
+---
+aws_accounts:
+  - number: "xxxxxxx" 
+    name: ajlocal-master
+    confluence_sub_pages:
+      - resource: rds
+        page_id: "vvvvvvvvvv"
+        page_name: "ajlocal-master (xxxxxxxxx)"
+
+  
