@@ -11,8 +11,8 @@ import (
 )
 
 const CHANNEL_NAME string = "tagging-support"
-const WEB_HOOK_URL string = "https://hooks.slack.com/services/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"
-const TEST_HOOK string = "https://hooks.slack.com/services/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"
+const WEB_HOOK_URL string = "https://hooks.slack.com/services/xxxxx"
+const TEST_HOOK string = "https://hooks.slack.com/services/xxxxxx"
 
 type ControllerData struct {
 	Resource          *string
