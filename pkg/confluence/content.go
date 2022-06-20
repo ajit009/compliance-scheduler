@@ -125,7 +125,6 @@ func UpdateConfluencePage(jj map[string]map[string]string, accountNumber string,
 		<th><p><strong>Instance id</strong></p></th>
 		<th><p><strong>Environment</strong></p></th>
 		<th><p><strong>Team</strong></p></th>
-		<th><p><strong>Repo</strong></p></th>
 		<th><p><strong>Comments</strong></p></th>
 	</tr>
 	`
