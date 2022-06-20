@@ -25,18 +25,18 @@ RUN go mod download
 # Copy source
 COPY . .
 # Build binary
-RUN go build -o /go/bin/dalek ./cmd/dalek 
+RUN go build -o /go/bin/comps ./cmd/comps 
 
 # Production image
 FROM ajlocalau-docker-prod-public.jfrog.io/alpine:3.10
 # Create Non Privileged user
 RUN addgroup --gid 101 dalek && \
-    adduser -S --uid 101 --ingroup dalek dalek
+    adduser -S --uid 101 --ingroup comps comps
 # Run as Non Privileged user
 USER dalek
 
-COPY --from=BUILD-ENV /go/bin/dalek /go/bin/dalek
+COPY --from=BUILD-ENV /go/bin/dalek /go/bin/comps
 COPY --from=BUILD-ENV /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=BUILD-ENV /usr/local/bin/kubectl /usr/local/bin/kubectl
 
-ENTRYPOINT ["/go/bin/dalek"]
+ENTRYPOINT ["/go/bin/comps"]
