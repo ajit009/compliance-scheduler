@@ -1,4 +1,4 @@
-IMAGE_REPO=ajlocalau-docker-prod-public.jfrog.io/ops/dalek
+IMAGE_REPO=ajlocalau-docker-prod-public.jfrog.io/ops/comps
 TAG=$(shell cut -d'=' -f2- .release)
 
 .DEFAULT_GOAL := build
@@ -24,12 +24,12 @@ test: system-check
 
 # Build the binary
 build: pre-build
-	@cd cmd/dalek;GOOS_VAL=$(shell go env GOOS) GOARCH_VAL=$(shell go env GOARCH) go build -o $(PWD)/build/bin/dalek
+	@cd cmd/comps;GOOS_VAL=$(shell go env GOOS) GOARCH_VAL=$(shell go env GOARCH) go build -o $(PWD)/build/bin/comps
 	@echo "Build completed successfully"
 
 run_sch: build
-	@echo "Running dalek"
-	@$(PWD)/build/bin/dalek
+	@echo "Running comps"
+	@$(PWD)/build/bin/comps
 	
 # Build the image
 container-image: pre-build
